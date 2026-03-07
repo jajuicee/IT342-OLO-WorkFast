@@ -1,21 +1,22 @@
 package edu.cit.olo.workfast.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Data; // If you are using Lombok
+
 @Entity
 @Table(name = "users")
-@Data // This handles getters/setters if you have the Lombok extension
+@Data
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
-    private String email;
+    @Column(nullable = false, unique = true)
+    private String username;
 
     @Column(nullable = false)
     private String password;
 
-    private String role; // e.g., "USER" or "ADMIN"
+    // Add other fields relevant to WorkFast here
 }
