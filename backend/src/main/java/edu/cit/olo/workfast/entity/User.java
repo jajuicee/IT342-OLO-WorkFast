@@ -1,7 +1,7 @@
 package edu.cit.olo.workfast.entity;
 
 import jakarta.persistence.*;
-import lombok.Data; // If you are using Lombok
+import lombok.Data;
 
 @Entity
 @Table(name = "users")
@@ -12,11 +12,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
     private String username;
+
+    @Column(nullable = false, unique = true)
+    private String email;
 
     @Column(nullable = false)
     private String password;
-
-    // Add other fields relevant to WorkFast here
-}
+}
