@@ -1,11 +1,3 @@
 {
-    "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-17",
-            "path": "C:\\Users\\L13Y17W04\\.jabba\\jdk\\openjdk@1.17.0",
-            "default": true
-        }
-    ]
+    "java.compile.nullAnalysis.mode": "automatic"
 }

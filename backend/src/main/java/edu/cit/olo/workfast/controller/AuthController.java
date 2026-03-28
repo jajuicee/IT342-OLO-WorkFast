@@ -1,55 +1,75 @@
 package edu.cit.olo.workfast.controller;
 
-import edu.cit.olo.workfast.dto.AuthResponse;
 import edu.cit.olo.workfast.dto.LoginRequest;
-import edu.cit.olo.workfast.dto.RegisterRequest;
+import edu.cit.olo.workfast.dto.RegistrationRequest;
 import edu.cit.olo.workfast.entity.User;
 import edu.cit.olo.workfast.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import edu.cit.olo.workfast.service.UserService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
+@RequiredArgsConstructor
 public class AuthController {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserService userService;
+    private final UserRepository userRepository;
+    private final AuthenticationManager authenticationManager;
 
     @PostMapping("/register")
-    public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) {
-        // Check if user already exists (using email as username)
-        if (userRepository.findByUsername(request.getEmail()).isPresent()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(new AuthResponse("User already exists", false, null));
+    public ResponseEntity<String> register(@Valid @RequestBody RegistrationRequest request) {
+        try {
+            userService.registerUser(request);
+            return ResponseEntity.status(HttpStatus.CREATED).body("User registered successfully.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
+    }
 
-        // Create new user (Mapping Email to Username as per DB schema)
-        User user = new User();
-        user.setUsername(request.getEmail()); 
-        user.setPassword(request.getPassword());
-        
-        User savedUser = userRepository.save(user);
-
-        return ResponseEntity.ok(new AuthResponse("Registration successful", true, savedUser.getId()));
+    @ExceptionHandler(org.springframework.web.bind.MethodArgumentNotValidException.class)
+    public ResponseEntity<String> handleValidationExceptionHandler(org.springframework.web.bind.MethodArgumentNotValidException ex) {
+        java.util.List<String> errors = ex.getBindingResult()
+                .getFieldErrors()
+                .stream()
+                .map(org.springframework.validation.FieldError::getDefaultMessage)
+                .toList();
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(String.join(", ", errors));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-        Optional<User> userOpt = userRepository.findByUsername(request.getEmail());
-        
-        if (userOpt.isPresent()) {
-            User user = userOpt.get();
-            // In a real app, use BCryptPasswordEncoder. Here we use plain text matching for simplicity based on the current setup.
-            if (user.getPassword().equals(request.getPassword())) {
-                return ResponseEntity.ok(new AuthResponse("Login successful", true, user.getId()));
-            }
+    public ResponseEntity<?> login(@Valid @RequestBody LoginRequest loginRequest) {
+        try {
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            loginRequest.getEmail(),
+                            loginRequest.getPassword()
+                    )
+            );
+
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
+            // Retrieve user info from the database to send back to the frontend
+            User user = userRepository.findByEmail(loginRequest.getEmail())
+                    .orElseThrow(() -> new RuntimeException("User not found"));
+
+            return ResponseEntity.ok(Map.of(
+                    "message", "Login successful!",
+                    "name", user.getName(),
+                    "email", user.getEmail()
+            ));
+
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }
-        
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                .body(new AuthResponse("Invalid credentials", false, null));
     }
 }

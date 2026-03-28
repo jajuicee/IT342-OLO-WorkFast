@@ -3,15 +3,10 @@ package edu.cit.olo.workfast.repository;
 import edu.cit.olo.workfast.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
-/**
- * Repository interface for User entity.
- * JpaRepository provides standard methods like save(), findById(), and delete().
- */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    
-    // You can add custom query methods here later, for example:
-    // Optional<User> findByEmail(String email);
-    java.util.Optional<User> findByUsername(String username);
+    boolean existsByEmail(String email);
+    Optional<User> findByEmail(String email);
 }
