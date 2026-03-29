@@ -11,6 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        val tvGreeting = findViewById<android.widget.TextView>(R.id.tvGreeting)
+        val userName = intent.getStringExtra("USER_NAME") ?: "User"
+        tvGreeting.text = "Hello, $userName!"
+        
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
