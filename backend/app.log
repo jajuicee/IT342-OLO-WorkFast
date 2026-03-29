@@ -1,22 +1,22 @@
-2026-03-07T23:02:31.276+08:00  INFO 25176 --- [main] e.cit.olo.workfast.WorkfastApplication   : Starting WorkfastApplication using Java 17.0.15 with PID 25176 (C:\Users\Reinzo Carlo\IdeaProjects\IT342-OLO-WorkFast\backend\target\classes started by Reinzo Carlo in C:\Users\Reinzo Carlo\IdeaProjects\IT342-OLO-WorkFast\backend)
-2026-03-07T23:02:31.279+08:00 DEBUG 25176 --- [main] e.cit.olo.workfast.WorkfastApplication   : Running with Spring Boot v3.5.11, Spring v6.2.16
-2026-03-07T23:02:31.280+08:00  INFO 25176 --- [main] e.cit.olo.workfast.WorkfastApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-03-07T23:02:31.881+08:00  INFO 25176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-03-07T23:02:31.930+08:00  INFO 25176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
-2026-03-07T23:02:32.380+08:00  INFO 25176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-03-07T23:02:32.392+08:00  INFO 25176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-07T23:02:32.393+08:00  INFO 25176 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-07T23:02:32.445+08:00  INFO 25176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-07T23:02:32.446+08:00  INFO 25176 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1109 ms
-2026-03-07T23:02:32.582+08:00  INFO 25176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-03-07T23:02:32.643+08:00  INFO 25176 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.42.Final
-2026-03-07T23:02:32.678+08:00  INFO 25176 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-03-07T23:02:32.973+08:00  INFO 25176 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-03-07T23:02:33.003+08:00  INFO 25176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-03-07T23:02:34.122+08:00  INFO 25176 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52285a5f
-2026-03-07T23:02:34.125+08:00  INFO 25176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-03-07T23:02:34.259+08:00  WARN 25176 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-03-07T23:02:34.563+08:00  INFO 25176 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-03-29T11:37:58.111+08:00  INFO 38592 --- [main] e.cit.olo.workfast.WorkfastApplication   : Starting WorkfastApplication using Java 17.0.15 with PID 38592 (C:\Users\Reinzo Carlo\IdeaProjects\IT342-OLO-WorkFast\backend\target\classes started by Reinzo Carlo in C:\Users\Reinzo Carlo\IdeaProjects\IT342-OLO-WorkFast\backend)
+2026-03-29T11:37:58.116+08:00 DEBUG 38592 --- [main] e.cit.olo.workfast.WorkfastApplication   : Running with Spring Boot v3.5.11, Spring v6.2.16
+2026-03-29T11:37:58.116+08:00  INFO 38592 --- [main] e.cit.olo.workfast.WorkfastApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-03-29T11:37:58.617+08:00  INFO 38592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-29T11:37:58.661+08:00  INFO 38592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interface.
+2026-03-29T11:37:59.120+08:00  INFO 38592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-03-29T11:37:59.131+08:00  INFO 38592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-29T11:37:59.131+08:00  INFO 38592 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-29T11:37:59.192+08:00  INFO 38592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-29T11:37:59.192+08:00  INFO 38592 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1039 ms
+2026-03-29T11:37:59.315+08:00  INFO 38592 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-29T11:37:59.365+08:00  INFO 38592 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.42.Final
+2026-03-29T11:37:59.392+08:00  INFO 38592 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-29T11:37:59.667+08:00  INFO 38592 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-29T11:37:59.728+08:00  INFO 38592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-29T11:38:01.101+08:00  INFO 38592 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@46524ebe
+2026-03-29T11:38:01.103+08:00  INFO 38592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-29T11:38:01.400+08:00  WARN 38592 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-29T11:38:01.644+08:00  INFO 38592 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 17.6
@@ -24,27 +24,30 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-03-07T23:02:35.246+08:00  INFO 25176 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-03-07T23:02:35.786+08:00  INFO 25176 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-03-07T23:02:36.014+08:00  INFO 25176 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-03-07T23:02:36.045+08:00  WARN 25176 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-03-07T23:02:36.241+08:00 DEBUG 25176 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
-2026-03-07T23:02:36.423+08:00  INFO 25176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-03-07T23:02:36.430+08:00  INFO 25176 --- [main] e.cit.olo.workfast.WorkfastApplication   : Started WorkfastApplication in 5.578 seconds (process running for 5.853)
-2026-03-07T23:02:46.071+08:00  INFO 25176 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-07T23:02:46.072+08:00  INFO 25176 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-07T23:02:46.072+08:00  INFO 25176 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2026-03-07T23:02:46.086+08:00 DEBUG 25176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
-2026-03-07T23:02:46.095+08:00 DEBUG 25176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
-2026-03-07T23:02:46.680+08:00  WARN 25176 --- [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23502
-2026-03-07T23:02:46.680+08:00 ERROR 25176 --- [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: null value in column "username" of relation "users" violates not-null constraint
-  Detail: Failing row contains (14, $2a$10$QVX85/EzTplKppeKjVr7/uwejyz8STju9Z9RLUQiaKa/m7auscQWi, null, test7@gmail.com, Test3).
-2026-03-07T23:02:46.784+08:00 DEBUG 25176 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-03-07T23:02:46.786+08:00 ERROR 25176 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: null value in column "username" of relation "users" violates not-null constraint
-  Detail: Failing row contains (14, $2a$10$QVX85/EzTplKppeKjVr7/uwejyz8STju9Z9RLUQiaKa/m7auscQWi, null, test7@gmail.com, Test3).] [insert into users (email,name,password) values (?,?,?)]; SQL [insert into users (email,name,password) values (?,?,?)]; constraint [username" of relation "users]] with root cause
+2026-03-29T11:38:02.456+08:00  INFO 38592 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-29T11:38:02.865+08:00  INFO 38592 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29T11:38:03.132+08:00  INFO 38592 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-29T11:38:03.158+08:00  WARN 38592 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-29T11:38:04.218+08:00 DEBUG 38592 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-03-29T11:38:04.367+08:00  INFO 38592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-03-29T11:38:04.374+08:00  INFO 38592 --- [main] e.cit.olo.workfast.WorkfastApplication   : Started WorkfastApplication in 6.618 seconds (process running for 6.859)
+2026-03-29T11:38:27.801+08:00  INFO 38592 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-29T11:38:27.802+08:00  INFO 38592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-29T11:38:27.803+08:00  INFO 38592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-29T11:38:27.839+08:00 DEBUG 38592 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-03-29T11:38:27.855+08:00 DEBUG 38592 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2026-03-29T11:38:30.664+08:00 DEBUG 38592 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-03-29T11:38:30.665+08:00 DEBUG 38592 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2026-03-29T11:38:31.112+08:00  WARN 38592 --- [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2026-03-29T11:38:31.113+08:00 ERROR 38592 --- [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "ukr43af9ap4edm43mmtq01oddj6"
+  Detail: Key (username)=(Reinzo) already exists.
+2026-03-29T11:38:31.208+08:00 DEBUG 38592 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-29T11:38:31.352+08:00 DEBUG 38592 --- [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-29T11:38:31.209+08:00 ERROR 38592 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "ukr43af9ap4edm43mmtq01oddj6"
+  Detail: Key (username)=(Reinzo) already exists.] [insert into users (email,name,password,username) values (?,?,?,?)]; SQL [insert into users (email,name,password,username) values (?,?,?,?)]; constraint [ukr43af9ap4edm43mmtq01oddj6]] with root cause
 
-org.postgresql.util.PSQLException: ERROR: null value in column "username" of relation "users" violates not-null constraint
-  Detail: Failing row contains (14, $2a$10$QVX85/EzTplKppeKjVr7/uwejyz8STju9Z9RLUQiaKa/m7auscQWi, null, test7@gmail.com, Test3).
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "ukr43af9ap4edm43mmtq01oddj6"
+  Detail: Key (username)=(Reinzo) already exists.
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875) ~[postgresql-42.7.10.jar:42.7.10]
 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560) ~[postgresql-42.7.10.jar:42.7.10]
 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429) ~[postgresql-42.7.10.jar:42.7.10]
@@ -116,8 +119,8 @@ org.postgresql.util.PSQLException: ERROR: null value in column "username" of rel
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.16.jar:6.2.16]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.16.jar:6.2.16]
 	at jdk.proxy2/jdk.proxy2.$Proxy121.save(Unknown Source) ~[na:na]
-	at edu.cit.olo.workfast.service.UserService.registerUser(UserService.java:27) ~[classes/:na]
-	at edu.cit.olo.workfast.controller.AuthController.register(AuthController.java:27) ~[classes/:na]
+	at edu.cit.olo.workfast.service.UserService.registerUser(UserService.java:28) ~[classes/:na]
+	at edu.cit.olo.workfast.controller.AuthController.register(AuthController.java:32) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -219,119 +222,30 @@ org.postgresql.util.PSQLException: ERROR: null value in column "username" of rel
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.52.jar:10.1.52]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2026-03-07T23:02:46.798+08:00 DEBUG 25176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /error
-2026-03-07T23:02:46.798+08:00 DEBUG 25176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /error
-2026-03-07T23:02:46.827+08:00 DEBUG 25176 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-03-07T23:05:22.862+08:00  INFO 25176 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-07T23:05:22.977+08:00  INFO 25176 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-07T23:05:22.982+08:00  INFO 25176 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-03-07T23:05:22.985+08:00  INFO 25176 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-03-07T23:05:22.989+08:00  INFO 25176 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-03-07T23:05:56.610+08:00  INFO 23708 --- [main] e.cit.olo.workfast.WorkfastApplication   : Starting WorkfastApplication using Java 17.0.15 with PID 23708 (C:\Users\Reinzo Carlo\IdeaProjects\IT342-OLO-WorkFast\backend\target\classes started by Reinzo Carlo in C:\Users\Reinzo Carlo\IdeaProjects\IT342-OLO-WorkFast\backend)
-2026-03-07T23:05:56.613+08:00 DEBUG 23708 --- [main] e.cit.olo.workfast.WorkfastApplication   : Running with Spring Boot v3.5.11, Spring v6.2.16
-2026-03-07T23:05:56.613+08:00  INFO 23708 --- [main] e.cit.olo.workfast.WorkfastApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-03-07T23:05:57.160+08:00  INFO 23708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-03-07T23:05:57.208+08:00  INFO 23708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
-2026-03-07T23:05:57.642+08:00  INFO 23708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-03-07T23:05:57.654+08:00  INFO 23708 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-07T23:05:57.655+08:00  INFO 23708 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-07T23:05:57.698+08:00  INFO 23708 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-07T23:05:57.698+08:00  INFO 23708 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1047 ms
-2026-03-07T23:05:57.803+08:00  INFO 23708 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-03-07T23:05:57.837+08:00  INFO 23708 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.42.Final
-2026-03-07T23:05:57.860+08:00  INFO 23708 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-03-07T23:05:58.064+08:00  INFO 23708 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-03-07T23:05:58.090+08:00  INFO 23708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-03-07T23:05:59.388+08:00  INFO 23708 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2807cf3
-2026-03-07T23:05:59.390+08:00  INFO 23708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-03-07T23:05:59.519+08:00  WARN 23708 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-03-07T23:05:59.847+08:00  INFO 23708 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.6
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-03-07T23:06:00.425+08:00  INFO 23708 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-03-07T23:06:00.912+08:00  INFO 23708 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-03-07T23:06:01.149+08:00  INFO 23708 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-03-07T23:06:01.178+08:00  WARN 23708 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-03-07T23:06:01.376+08:00 DEBUG 23708 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
-2026-03-07T23:06:01.549+08:00  INFO 23708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-03-07T23:06:01.556+08:00  INFO 23708 --- [main] e.cit.olo.workfast.WorkfastApplication   : Started WorkfastApplication in 5.301 seconds (process running for 5.598)
-2026-03-07T23:06:22.539+08:00  INFO 23708 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-07T23:06:22.540+08:00  INFO 23708 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-07T23:06:22.541+08:00  INFO 23708 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-03-07T23:06:22.551+08:00 DEBUG 23708 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
-2026-03-07T23:06:22.558+08:00 DEBUG 23708 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
-2026-03-07T23:06:23.282+08:00 DEBUG 23708 --- [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-03-07T23:19:13.102+08:00 DEBUG 23708 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/auth/register
-2026-03-07T23:19:13.141+08:00 DEBUG 23708 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
-2026-03-07T23:19:13.147+08:00 DEBUG 23708 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
-2026-03-07T23:19:13.830+08:00 DEBUG 23708 --- [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-03-07T23:19:39.444+08:00 DEBUG 23708 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/auth/login
-2026-03-07T23:19:39.450+08:00 DEBUG 23708 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
-2026-03-07T23:19:39.452+08:00 DEBUG 23708 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
-2026-03-07T23:19:40.104+08:00 DEBUG 23708 --- [http-nio-8080-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
-2026-03-07T23:19:40.106+08:00 DEBUG 23708 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-03-07T23:22:14.952+08:00 DEBUG 23708 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/auth/register
-2026-03-07T23:22:14.956+08:00 DEBUG 23708 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
-2026-03-07T23:22:14.959+08:00 DEBUG 23708 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
-2026-03-07T23:22:15.509+08:00 DEBUG 23708 --- [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-03-07T23:28:43.780+08:00 DEBUG 23708 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/auth/login
-2026-03-07T23:28:43.785+08:00 DEBUG 23708 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
-2026-03-07T23:28:43.786+08:00 DEBUG 23708 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
-2026-03-07T23:28:44.128+08:00 DEBUG 23708 --- [http-nio-8080-exec-3] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
-2026-03-07T23:28:44.129+08:00 DEBUG 23708 --- [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-03-07T23:31:19.930+08:00  INFO 23708 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-07T23:31:20.017+08:00  INFO 23708 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-07T23:31:20.022+08:00  INFO 23708 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-03-07T23:31:20.027+08:00  INFO 23708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-03-07T23:31:20.030+08:00  INFO 23708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-03-07T23:32:01.675+08:00  INFO 3264 --- [main] e.cit.olo.workfast.WorkfastApplication   : Starting WorkfastApplication using Java 17.0.15 with PID 3264 (C:\Users\Reinzo Carlo\IdeaProjects\IT342-OLO-WorkFast\backend\target\classes started by Reinzo Carlo in C:\Users\Reinzo Carlo\IdeaProjects\IT342-OLO-WorkFast\backend)
-2026-03-07T23:32:01.677+08:00 DEBUG 3264 --- [main] e.cit.olo.workfast.WorkfastApplication   : Running with Spring Boot v3.5.11, Spring v6.2.16
-2026-03-07T23:32:01.678+08:00  INFO 3264 --- [main] e.cit.olo.workfast.WorkfastApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-03-07T23:32:02.124+08:00  INFO 3264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-03-07T23:32:02.161+08:00  INFO 3264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interface.
-2026-03-07T23:32:02.539+08:00  INFO 3264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-03-07T23:32:02.550+08:00  INFO 3264 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-07T23:32:02.551+08:00  INFO 3264 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
-2026-03-07T23:32:02.600+08:00  INFO 3264 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-03-07T23:32:02.600+08:00  INFO 3264 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 895 ms
-2026-03-07T23:32:02.721+08:00  INFO 3264 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-03-07T23:32:02.774+08:00  INFO 3264 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.42.Final
-2026-03-07T23:32:02.803+08:00  INFO 3264 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-03-07T23:32:03.022+08:00  INFO 3264 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-03-07T23:32:03.049+08:00  INFO 3264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-03-07T23:32:04.169+08:00  INFO 3264 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6115846e
-2026-03-07T23:32:04.170+08:00  INFO 3264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-03-07T23:32:04.298+08:00  WARN 3264 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-03-07T23:32:04.591+08:00  INFO 3264 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.6
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-03-07T23:32:05.171+08:00  INFO 3264 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-03-07T23:32:05.595+08:00  INFO 3264 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-03-07T23:32:05.798+08:00  INFO 3264 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-03-07T23:32:05.820+08:00  WARN 3264 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-03-07T23:32:05.965+08:00 DEBUG 3264 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
-2026-03-07T23:32:06.116+08:00  INFO 3264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-03-07T23:32:06.123+08:00  INFO 3264 --- [main] e.cit.olo.workfast.WorkfastApplication   : Started WorkfastApplication in 4.757 seconds (process running for 4.979)
-2026-03-07T23:32:31.791+08:00  INFO 3264 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-07T23:32:31.793+08:00  INFO 3264 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-07T23:32:31.796+08:00  INFO 3264 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-07T23:32:31.850+08:00 DEBUG 3264 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/auth/login
-2026-03-07T23:32:31.926+08:00 DEBUG 3264 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
-2026-03-07T23:32:31.936+08:00 DEBUG 3264 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
-2026-03-07T23:32:32.777+08:00 DEBUG 3264 --- [http-nio-8080-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
-2026-03-07T23:32:32.778+08:00 DEBUG 3264 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-03-07T23:33:15.611+08:00  INFO 3264 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-07T23:33:15.707+08:00  INFO 3264 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-03-07T23:33:15.711+08:00  INFO 3264 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-03-07T23:33:15.714+08:00  INFO 3264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-03-07T23:33:15.806+08:00  INFO 3264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-29T11:38:31.366+08:00 DEBUG 38592 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /error
+2026-03-29T11:38:31.366+08:00 DEBUG 38592 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-29T11:38:31.495+08:00 DEBUG 38592 --- [http-nio-8080-exec-2] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://10.0.2.2:8080/error?continue to session
+2026-03-29T11:38:31.495+08:00 DEBUG 38592 --- [http-nio-8080-exec-2] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2026-03-29T11:39:02.244+08:00 DEBUG 38592 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-03-29T11:39:02.246+08:00 DEBUG 38592 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-03-29T11:39:02.660+08:00 DEBUG 38592 --- [http-nio-8080-exec-6] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-03-29T11:39:02.660+08:00 DEBUG 38592 --- [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-29T11:40:14.696+08:00 DEBUG 38592 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-03-29T11:40:14.697+08:00 DEBUG 38592 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2026-03-29T11:40:15.142+08:00 DEBUG 38592 --- [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-29T11:40:48.076+08:00 DEBUG 38592 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-03-29T11:40:48.078+08:00 DEBUG 38592 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-03-29T11:40:48.375+08:00 DEBUG 38592 --- [http-nio-8080-exec-4] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-03-29T11:40:48.376+08:00 DEBUG 38592 --- [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-29T13:05:55.507+08:00 DEBUG 38592 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-03-29T13:05:55.521+08:00 DEBUG 38592 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2026-03-29T13:05:56.144+08:00 DEBUG 38592 --- [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-29T13:06:57.752+08:00 DEBUG 38592 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-03-29T13:06:57.752+08:00 DEBUG 38592 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-03-29T13:06:58.019+08:00 DEBUG 38592 --- [http-nio-8080-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-03-29T13:06:58.019+08:00 DEBUG 38592 --- [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-29T13:12:48.619+08:00  INFO 38592 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-29T13:12:48.717+08:00  INFO 38592 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-03-29T13:12:48.732+08:00  INFO 38592 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29T13:12:48.757+08:00  INFO 38592 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-29T13:12:48.835+08:00  INFO 38592 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
