@@ -4,6 +4,7 @@ import edu.cit.olo.workfast.dto.LoginRequest;
 import edu.cit.olo.workfast.dto.RegistrationRequest;
 import edu.cit.olo.workfast.entity.User;
 import edu.cit.olo.workfast.repository.UserRepository;
+import edu.cit.olo.workfast.service.JwtService;
 import edu.cit.olo.workfast.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,13 +19,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthController {
 
     private final UserService userService;
     private final UserRepository userRepository;
     private final AuthenticationManager authenticationManager;
+    private final JwtService jwtService;
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@Valid @RequestBody RegistrationRequest request) {
@@ -34,16 +36,6 @@ public class AuthController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
-    }
-
-    @ExceptionHandler(org.springframework.web.bind.MethodArgumentNotValidException.class)
-    public ResponseEntity<String> handleValidationExceptionHandler(org.springframework.web.bind.MethodArgumentNotValidException ex) {
-        java.util.List<String> errors = ex.getBindingResult()
-                .getFieldErrors()
-                .stream()
-                .map(org.springframework.validation.FieldError::getDefaultMessage)
-                .toList();
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(String.join(", ", errors));
     }
 
     @PostMapping("/login")
@@ -58,18 +50,35 @@ public class AuthController {
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
-            // Retrieve user info from the database to send back to the frontend
             User user = userRepository.findByEmail(loginRequest.getEmail())
                     .orElseThrow(() -> new RuntimeException("User not found"));
 
+            String token = jwtService.generateToken((org.springframework.security.core.userdetails.UserDetails) authentication.getPrincipal());
+
             return ResponseEntity.ok(Map.of(
                     "message", "Login successful!",
+                    "token", token,
+                    "id", user.getId().toString(),
                     "name", user.getName(),
-                    "email", user.getEmail()
+                    "email", user.getEmail(),
+                    "role", user.getRole().getName(),
+                    "department", user.getDepartment().getName()
             ));
 
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }
     }
+
+
+    @ExceptionHandler(org.springframework.web.bind.MethodArgumentNotValidException.class)
+    public ResponseEntity<String> handleValidationExceptionHandler(org.springframework.web.bind.MethodArgumentNotValidException ex) {
+        java.util.List<String> errors = ex.getBindingResult()
+                .getFieldErrors()
+                .stream()
+                .map(org.springframework.validation.FieldError::getDefaultMessage)
+                .toList();
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(String.join(", ", errors));
+    }
 }
+
