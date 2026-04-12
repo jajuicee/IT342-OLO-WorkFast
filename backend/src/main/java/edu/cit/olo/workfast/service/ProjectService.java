@@ -43,13 +43,19 @@ public class ProjectService {
 
 
     @Transactional
-    public Project createProject(Project project, User admin) {
-        project.setAdmin(admin);
-        project.setStatus(Project.ProjectStatus.INITIATED);
+    public Project createProject(String name, String description, java.math.BigDecimal deposit, List<Long> departmentIds, User admin) {
+        Project project = Project.builder()
+                .name(name)
+                .description(description)
+                .depositAmount(deposit)
+                .admin(admin)
+                .status(Project.ProjectStatus.INITIATED)
+                .build();
+                
         Project savedProject = projectRepository.save(project);
         
-        // Initialize the multi-step pipeline based on standard departments
-        initializeProjectPipeline(savedProject);
+        // Initialize the multi-step pipeline based on custom sequence
+        initializeProjectPipeline(savedProject, departmentIds);
         
         return savedProject;
     }
@@ -58,14 +64,16 @@ public class ProjectService {
         return projectRepository.findAll();
     }
 
-    private void initializeProjectPipeline(Project project) {
-        // Standard pipeline: RESEARCH -> DESIGN -> DEVELOPMENT -> QA -> DEPLOYMENT
-        String[] deptNames = {"RESEARCH", "DESIGN", "DEVELOPMENT", "QA", "DEPLOYMENT"};
-        
-        for (int i = 0; i < deptNames.length; i++) {
+    private void initializeProjectPipeline(Project project, List<Long> departmentIds) {
+        if (departmentIds == null || departmentIds.isEmpty()) {
+            throw new RuntimeException("Workflow sequence cannot be empty");
+        }
+
+        for (int i = 0; i < departmentIds.size(); i++) {
             final int step = i + 1;
-            Department dept = departmentRepository.findByName(deptNames[i])
-                    .orElseThrow(() -> new RuntimeException("Department not found: " + deptNames[step-1]));
+            Long deptId = departmentIds.get(i);
+            Department dept = departmentRepository.findById(deptId)
+                    .orElseThrow(() -> new RuntimeException("Department not found with ID: " + deptId));
             
             Task task = Task.builder()
                     .project(project)

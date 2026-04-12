@@ -40,6 +40,7 @@ public class SecurityConfig {
                 .authenticationProvider(authenticationProvider())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/ws-workfast/**").permitAll()
                         .requestMatchers("/api/v1/projects/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
