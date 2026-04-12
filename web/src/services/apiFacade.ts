@@ -73,8 +73,18 @@ export const apiFacade = {
     return api.get<Project[]>('/projects');
   },
 
-  createProject: async (projectData: Partial<Project>) => {
+  createProject: async (projectData: { 
+    name: string; 
+    description: string; 
+    depositAmount: number;
+    departmentSequence: number[]; 
+  }) => {
     return api.post<Project>('/projects', projectData);
+  },
+
+  // Departments
+  getDepartments: async () => {
+    return api.get<any[]>('/departments');
   },
 
   // Tasks
@@ -87,12 +97,20 @@ export const apiFacade = {
     return api.put(`/projects/${projectId}/tasks/${taskId}?status=${status}`);
   },
 
+  getProjectTasks: async (projectId: string) => {
+    return api.get<Task[]>(`/projects/${projectId}/tasks`);
+  },
+
   // Users / Admin
   getUsers: async () => {
     return api.get<User[]>('/users'); // Assuming this endpoint exists or will exist
   },
 
   deleteUser: async (id: string) => {
-    return api.delete(`/users/${id}`); // Assuming this endpoint exists or will exist
+    return api.delete(`/users/${id}`);
+  },
+
+  updateUser: async (id: string, data: { role?: string; department?: string }) => {
+    return api.put(`/users/${id}`, data);
   },
 };

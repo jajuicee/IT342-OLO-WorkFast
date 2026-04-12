@@ -34,6 +34,7 @@ public class DataInitializer implements CommandLineRunner {
 
         // 2. Departments
         Department research = createDepartmentIfNotFound("RESEARCH", "Research and scientific analysis");
+        createDepartmentIfNotFound("DESIGN", "UI/UX and architectural design");
         createDepartmentIfNotFound("DEVELOPMENT", "Software engineering and coding");
         createDepartmentIfNotFound("QA", "Quality assurance and testing");
         createDepartmentIfNotFound("DEPLOYMENT", "Final production rollout");

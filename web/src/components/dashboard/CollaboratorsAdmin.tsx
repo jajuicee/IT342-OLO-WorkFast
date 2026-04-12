@@ -6,13 +6,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 const CollaboratorsAdmin: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
-  
+
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [newUserName, setNewUserName] = useState('');
-  const [newUserEmail, setNewUserEmail] = useState('');
-  const [newUserRole, setNewUserRole] = useState('USER');
+  const [allUsers, setAllUsers] = useState<User[]>([]);
+  const [selectedUserId, setSelectedUserId] = useState('');
+  const [newUserRole, setNewUserRole] = useState('WORKER');
   const [newUserDept, setNewUserDept] = useState('RESEARCH');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetchUsers();
@@ -23,16 +24,11 @@ const CollaboratorsAdmin: React.FC = () => {
       setLoading(true);
       const response = await apiFacade.getUsers();
       setUsers(response.data);
+      setAllUsers(response.data);
     } catch (error) {
       console.error("Failed to fetch users", error);
-      // For demo if API fails, fallback to standard mock user we know exists
-      setUsers([{
-        id: '1',
-        name: 'Test Administrator',
-        email: 'test3@gmail.com',
-        role: 'ADMIN',
-        department: 'RESEARCH'
-      }]);
+      setUsers([]);
+      setAllUsers([]);
     } finally {
       setLoading(false);
     }
@@ -42,59 +38,49 @@ const CollaboratorsAdmin: React.FC = () => {
     try {
       await apiFacade.deleteUser(id);
       setUsers(users.filter(u => u.id !== id));
+      setAllUsers(allUsers.filter(u => u.id !== id));
     } catch (error) {
-       console.error("Failed to delete user", error);
+      console.error("Failed to delete user", error);
     }
   };
 
-  const handleCreateUser = async (e: React.FormEvent) => {
+  const handleAssignCollaborator = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newUserName.trim() || !newUserEmail.trim()) return;
-    
+    if (!selectedUserId) return;
+
     try {
       setIsSubmitting(true);
-      await apiFacade.register({
-        name: newUserName,
-        email: newUserEmail,
-        password: 'defaultPassword123', // Hardcoded for demo/registration
+      await apiFacade.updateUser(selectedUserId, {
         role: newUserRole,
         department: newUserDept
       });
       setIsModalOpen(false);
-      setNewUserName('');
-      setNewUserEmail('');
-      setNewUserRole('USER');
-      setNewUserDept('RESEARCH');
+      setSelectedUserId('');
+      setSearchTerm('');
       fetchUsers();
     } catch (error) {
-      console.error("Error creating user:", error);
-      // For demo, manually add to state if back-end fails
-      setUsers([...users, {
-        id: Math.random().toString(36).substring(7),
-        name: newUserName,
-        email: newUserEmail,
-        role: newUserRole,
-        department: newUserDept
-      }]);
-      setIsModalOpen(false);
-      setNewUserName('');
-      setNewUserEmail('');
+      console.error("Error assigning collaborator:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  const filteredDropdownUsers = allUsers.filter(u =>
+    (u.name || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (u.email || '').toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
       <div className="flex justify-between items-center mb-8">
         <div>
            <h2 className="text-2xl font-black text-white tracking-tight uppercase flex items-center gap-2 mb-1">
-             <Users className="text-indigo-500 w-6 h-6" /> 
+             <Users className="text-indigo-500 w-6 h-6" />
              Collaborator Directory
            </h2>
            <p className="text-sm text-slate-400 font-medium">Manage system users, access roles, and department assignments.</p>
         </div>
-        <button 
+        <button
           onClick={() => setIsModalOpen(true)}
           className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center gap-2 shadow-lg shadow-indigo-500/20">
           <Plus className="w-4 h-4" /> Add Collaborator
@@ -132,23 +118,23 @@ const CollaboratorsAdmin: React.FC = () => {
                         <td className="p-4">
                            <div className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-black">
-                                 {user.name.charAt(0).toUpperCase()}
+                                 {(user.name || 'U').charAt(0).toUpperCase()}
                               </div>
-                              <span className="font-bold text-white tracking-tight">{user.name}</span>
+                              <span className="font-bold text-white tracking-tight">{user.name || 'Unknown'}</span>
                            </div>
                         </td>
-                        <td className="p-4 font-medium text-slate-400">{user.email}</td>
+                        <td className="p-4 font-medium text-slate-400">{user.email || '—'}</td>
                         <td className="p-4">
                            <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
                               user.role === 'ADMIN' ? 'bg-amber-500/20 text-amber-500' : 'bg-indigo-500/20 text-indigo-400'
                            }`}>
                               {user.role === 'ADMIN' ? <Shield className="w-3 h-3" /> : <UserCheck className="w-3 h-3" />}
-                              {user.role}
+                              {user.role || 'USER'}
                            </span>
                         </td>
-                        <td className="p-4 text-slate-300 font-bold text-xs uppercase tracking-wider">{user.department}</td>
+                        <td className="p-4 text-slate-300 font-bold text-xs uppercase tracking-wider">{user.department || '—'}</td>
                         <td className="p-4 text-right">
-                           <button 
+                           <button
                              onClick={() => handleDelete(user.id)}
                              className="p-2 text-slate-500 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors"
                              title="Revoke Access"
@@ -168,62 +154,71 @@ const CollaboratorsAdmin: React.FC = () => {
       <AnimatePresence>
         {isModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-md shadow-2xl relative"
+              className="bg-slate-900 border border-white/10 rounded-2xl p-8 w-full max-w-md shadow-2xl relative"
             >
-              <button 
-                onClick={() => setIsModalOpen(false)}
+              <button
+                onClick={() => { setIsModalOpen(false); setSearchTerm(''); setSelectedUserId(''); }}
                 className="absolute top-4 right-4 text-slate-400 hover:text-white"
               >
                 <X className="w-5 h-5" />
               </button>
-              
+
               <h2 className="text-xl font-black text-white mb-6 uppercase tracking-tight">Add Collaborator</h2>
-              
-              <form onSubmit={handleCreateUser} className="space-y-4">
+
+              <form onSubmit={handleAssignCollaborator} className="space-y-6">
                 <div>
-                  <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Full Name</label>
-                  <input 
-                    type="text" 
-                    required
-                    value={newUserName}
-                    onChange={(e) => setNewUserName(e.target.value)}
-                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-                    placeholder="e.g. John Doe"
-                  />
+                  <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Select User from Database</label>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Search by name or email..."
+                      value={searchTerm}
+                      onChange={(e) => { setSearchTerm(e.target.value); setSelectedUserId(''); }}
+                      className="w-full bg-slate-950 border border-white/10 rounded-t-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                    />
+                    <div className="max-h-40 overflow-y-auto bg-slate-950 border-x border-b border-white/10 rounded-b-xl">
+                      {filteredDropdownUsers.length === 0 ? (
+                        <div className="p-3 text-xs text-slate-600 font-bold italic">No matching users in system...</div>
+                      ) : (
+                        filteredDropdownUsers.map(u => (
+                          <button
+                            key={u.id} type="button"
+                            onClick={() => { setSelectedUserId(u.id); setSearchTerm(u.name || u.email); }}
+                            className={`w-full text-left p-3 hover:bg-white/5 transition-colors flex justify-between items-center ${
+                              selectedUserId === u.id ? 'bg-indigo-500/10 text-indigo-400' : 'text-slate-400'
+                            }`}
+                          >
+                            <span className="text-xs font-bold">{u.name || 'User'} <span className="opacity-50 font-medium">({u.email})</span></span>
+                            {selectedUserId === u.id && <UserCheck className="w-3 h-3" />}
+                          </button>
+                        ))
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Email</label>
-                  <input 
-                    type="email" 
-                    required
-                    value={newUserEmail}
-                    onChange={(e) => setNewUserEmail(e.target.value)}
-                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Clearance Role</label>
-                    <select 
+                    <select
                       value={newUserRole}
                       onChange={(e) => setNewUserRole(e.target.value)}
-                      className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                      className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors appearance-none"
                     >
-                      <option value="USER">User</option>
+                      <option value="WORKER">Worker</option>
                       <option value="ADMIN">Admin</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Department Node</label>
-                    <select 
+                    <select
                       value={newUserDept}
                       onChange={(e) => setNewUserDept(e.target.value)}
-                      className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                      className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors appearance-none"
                     >
                       <option value="RESEARCH">Research</option>
                       <option value="DESIGN">Design</option>
@@ -234,12 +229,12 @@ const CollaboratorsAdmin: React.FC = () => {
                   </div>
                 </div>
                 <div className="pt-4">
-                  <button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white text-sm font-black uppercase tracking-widest rounded-xl transition-colors shadow-lg shadow-indigo-500/20"
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || !selectedUserId}
+                    className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-30 text-white text-sm font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-indigo-500/20"
                   >
-                    {isSubmitting ? 'Registering...' : 'Add User'}
+                    {isSubmitting ? 'Syncing...' : 'Confirm Assignment'}
                   </button>
                 </div>
               </form>

@@ -24,14 +24,14 @@ public class ProjectFacade {
     /**
      * Facade method to handle complex project initialization logic behind a simple interface.
      */
-    public Project initiateNewProject(Project project, User admin) {
+    public Project initiateNewProject(String name, String description, java.math.BigDecimal deposit, java.util.List<Long> sequence, User admin) {
         System.out.println("Facade: Orchestrating complex project initialization...");
         
         // 1. Singleton usage
         dbManager.logConnection();
         
         // 2. Subsystem call: Create Project and default pipeline
-        Project createdProject = projectService.createProject(project, admin);
+        Project createdProject = projectService.createProject(name, description, deposit, sequence, admin);
         
         // 3. (Mock) Initial file configuration / workspace logic
         System.out.println("Facade: Initializing virtual workspace repository...");

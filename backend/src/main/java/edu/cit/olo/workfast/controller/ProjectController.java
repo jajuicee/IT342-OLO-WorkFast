@@ -33,12 +33,18 @@ public class ProjectController {
 
     @PostMapping("/projects")
     // Use @PreAuthorize handle roles if @EnableMethodSecurity is on, but SecurityConfig has hasRole("ADMIN")
-    public ResponseEntity<Project> createProject(@RequestBody Project project) {
+    public ResponseEntity<Project> createProject(@RequestBody edu.cit.olo.workfast.dto.ProjectRequestDTO request) {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
         User admin = userRepository.findByEmail(email).orElseThrow();
         
         // Facade Pattern: Unified subsystem call
-        Project createdProject = projectFacade.initiateNewProject(project, admin);
+        Project createdProject = projectFacade.initiateNewProject(
+                request.getName(),
+                request.getDescription(),
+                request.getDepositAmount(),
+                request.getDepartmentSequence(),
+                admin
+        );
         return ResponseEntity.ok(createdProject);
     }
 
@@ -56,6 +62,12 @@ public class ProjectController {
 
         projectService.updateTaskStatus(taskId, status);
         return ResponseEntity.ok("Task status updated.");
+    }
+
+    @GetMapping("/projects/{projectId}/tasks")
+    public ResponseEntity<List<Task>> getProjectTasks(@PathVariable UUID projectId) {
+        List<Task> tasks = taskRepository.findByProjectIdOrderByStepOrderAsc(projectId);
+        return ResponseEntity.ok(tasks);
     }
 
     @GetMapping("/departments/{departmentId}/tasks")
