@@ -1,4 +1,4 @@
-package com.olo.workfast
+package com.olo.workfast.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import com.olo.workfast.api.RetrofitClient
-import com.olo.workfast.models.LoginRequest
+import com.olo.workfast.R
+import com.olo.workfast.home.MainActivity
+import com.olo.workfast.shared.RetrofitClient
+import com.olo.workfast.auth.model.LoginRequest
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {

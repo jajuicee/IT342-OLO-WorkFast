@@ -1,4 +1,4 @@
-package com.olo.workfast.models
+package com.olo.workfast.auth.model
 
 data class RegisterRequest(val name: String, val email: String, val password: String)
 data class LoginRequest(val email: String, val password: String)

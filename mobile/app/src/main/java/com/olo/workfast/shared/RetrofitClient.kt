@@ -1,5 +1,6 @@
-package com.olo.workfast.api
+package com.olo.workfast.shared
 
+import com.olo.workfast.auth.AuthService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
