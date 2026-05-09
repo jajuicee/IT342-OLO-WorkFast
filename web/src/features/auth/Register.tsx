@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { User, Mail, Lock, ArrowRight, Loader2, CheckCircle2 } from 'lucide-react';
-import { apiFacade } from '../services/apiFacade';
+import { apiFacade } from '../../shared/apiFacade';
 
 const Register: React.FC = () => {
   const [name, setName] = useState('');

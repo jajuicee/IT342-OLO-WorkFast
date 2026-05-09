@@ -18,15 +18,15 @@ import {
   Circle
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { apiFacade, User, Project, Task } from '../services/apiFacade';
+import { apiFacade, User, Project, Task } from '../../shared/apiFacade';
 import { Client, Message } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
 
-import OperationsCenter from '../components/dashboard/OperationsCenter';
-import ProjectPipeline from '../components/dashboard/ProjectPipeline';
-import TaskQueue from '../components/dashboard/TaskQueue';
-import CollaboratorsAdmin from '../components/dashboard/CollaboratorsAdmin';
-import SystemConfig from '../components/dashboard/SystemConfig';
+import OperationsCenter from './OperationsCenter';
+import ProjectPipeline from '../project/ProjectPipeline';
+import TaskQueue from '../task/TaskQueue';
+import CollaboratorsAdmin from '../collaborators/CollaboratorsAdmin';
+import SystemConfig from '../settings/SystemConfig';
 
 // --- Components ---
 

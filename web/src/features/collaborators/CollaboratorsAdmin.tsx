@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Users, Plus, Shield, UserX, UserCheck, X } from 'lucide-react';
-import { apiFacade, User } from '../../services/apiFacade';
+import { apiFacade, User } from '../../shared/apiFacade';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const CollaboratorsAdmin: React.FC = () => {

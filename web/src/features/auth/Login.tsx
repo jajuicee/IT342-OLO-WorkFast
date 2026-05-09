@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, Mail, ArrowRight, User, Globe, AlertCircle, Loader2 } from 'lucide-react';
 
-import { apiFacade } from '../services/apiFacade';
+import { apiFacade } from '../../shared/apiFacade';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');

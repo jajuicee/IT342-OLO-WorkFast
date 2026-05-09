@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckSquare, Clock, CheckCircle2 } from 'lucide-react';
-import { Task, apiFacade } from '../../services/apiFacade';
+import { Task, apiFacade } from '../../shared/apiFacade';
 
 interface TaskQueueProps {
   departmentTasks: Task[];

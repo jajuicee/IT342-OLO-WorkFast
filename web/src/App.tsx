@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
+import Login from './features/auth/Login';
+import Register from './features/auth/Register';
+import Dashboard from './features/dashboard/Dashboard';
 
 
 // Protected Route Component

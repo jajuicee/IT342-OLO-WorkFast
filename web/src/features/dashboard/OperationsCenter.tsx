@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Layers, CheckSquare, TrendingUp, Users, Plus, ChevronRight, Clock, CheckCircle2 } from 'lucide-react';
-import { Project, Task, apiFacade } from '../../services/apiFacade';
+import { Project, Task, apiFacade } from '../../shared/apiFacade';
 
 // --- StatCard Component
 export const StatCard = ({ label, value, trend, icon: Icon }: any) => (

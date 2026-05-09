@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Layers, Plus, Search, ChevronRight, X, Clock, CheckCircle2, ArrowLeft, CircleDot, Lock, Unlock, CheckCheck } from 'lucide-react';
-import { Project, Task, apiFacade } from '../../services/apiFacade';
+import { Project, Task, apiFacade } from '../../shared/apiFacade';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ProjectPipelineProps {
