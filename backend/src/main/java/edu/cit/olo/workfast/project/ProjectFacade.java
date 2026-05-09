@@ -1,0 +1,40 @@
+package edu.cit.olo.workfast.project;
+
+import edu.cit.olo.workfast.auth.entity.User;
+import edu.cit.olo.workfast.project.entity.Project;
+import edu.cit.olo.workfast.shared.pattern.singleton.SupabaseConnectionManager;
+import org.springframework.stereotype.Component;
+
+/**
+ * Facade Pattern Implementation.
+ * Provides a simplified interface to the complex subsystem of Project Management, Database initialization, and Task initialization.
+ */
+@Component
+public class ProjectFacade {
+
+    private final ProjectService projectService;
+    private final SupabaseConnectionManager dbManager;
+
+    public ProjectFacade(ProjectService projectService) {
+        this.projectService = projectService;
+        this.dbManager = SupabaseConnectionManager.getInstance();
+    }
+
+    /**
+     * Facade method to handle complex project initialization logic behind a simple interface.
+     */
+    public Project initiateNewProject(String name, String description, java.math.BigDecimal deposit, java.util.List<Long> sequence, User admin) {
+        System.out.println("Facade: Orchestrating complex project initialization...");
+        
+        // 1. Singleton usage
+        dbManager.logConnection();
+        
+        // 2. Subsystem call: Create Project and default pipeline
+        Project createdProject = projectService.createProject(name, description, deposit, sequence, admin);
+        
+        // 3. (Mock) Initial file configuration / workspace logic
+        System.out.println("Facade: Initializing virtual workspace repository...");
+        
+        return createdProject;
+    }
+}
